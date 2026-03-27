@@ -7,21 +7,80 @@
 
   <style>
     .receipt {
-      max-width: 700px;
+      max-width: 650px;
       margin: 120px auto;
-      padding: 30px;
-      border: 1px solid #eee;
-      border-radius: 10px;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.05);
     }
 
     .receipt h1 {
-      font-family: 'Playfair Display';
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--charcoal);
+    }
+
+    .receipt-sub {
+      color: var(--warm-gray);
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+
+    .receipt-info {
+      margin-bottom: 25px;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    .receipt-items {
+      margin: 25px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .receipt-item {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
+      font-size: 0.9rem;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .receipt-total {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .btn-home {
+      margin-top: 30px;
+      width: 100%;
+      padding: 14px;
+      background: var(--deep-rose);
+      color: white;
+      border: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-home:hover {
+      background: #a33a5a;
+      transform: translateY(-1px);
+    }
+
+    .divider {
+      margin: 20px 0;
+      border: none;
+      border-top: 1px solid rgba(0,0,0,0.08);
     }
   </style>
 </head>
@@ -29,20 +88,28 @@
 <body>
 
 <div class="receipt">
-  <h1>Thank You for Your Purchase 💖</h1>
 
-  <p id="customer"></p>
-  <p id="address"></p>
+  <h1>Thank You 💖</h1>
+  <div class="receipt-sub">Your order has been placed successfully</div>
 
-  <hr>
+  <div class="receipt-info">
+    <p id="customer"></p>
+    <p id="address"></p>
+  </div>
 
-  <div id="receiptItems"></div>
+  <hr class="divider">
 
-  <hr>
+  <div id="receiptItems" class="receipt-items"></div>
 
-  <h3 id="total"></h3>
+  <hr class="divider">
 
-  <button onclick="goHome()">Back to Shop</button>
+  <div class="receipt-total">
+    <span>Total</span>
+    <strong id="total"></strong>
+  </div>
+
+  <button class="btn-home" onclick="goHome()">Back to Shop</button>
+
 </div>
 
 <script src="../js_code/receipt.js"></script>
