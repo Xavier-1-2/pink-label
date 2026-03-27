@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Receipt</title>
+  <link rel="stylesheet" href="../styles/index.css">
+
+  <style>
+    .receipt {
+      max-width: 700px;
+      margin: 120px auto;
+      padding: 30px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+    }
+
+    .receipt h1 {
+      font-family: 'Playfair Display';
+    }
+
+    .receipt-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="receipt">
+  <h1>Thank You for Your Purchase 💖</h1>
+
+  <p id="customer"></p>
+  <p id="address"></p>
+
+  <hr>
+
+  <div id="receiptItems"></div>
+
+  <hr>
+
+  <h3 id="total"></h3>
+
+  <button onclick="goHome()">Back to Shop</button>
+</div>
+
+<script src="../js_code/receipt.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Pink Label</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=DM+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/index.css">
+
+  <style>
+    .checkout-container {
+      max-width: 1100px;
+      margin: 120px auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+    }
+
+    .checkout-title {
+      font-family: 'Playfair Display';
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .checkout-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .checkout-item {
+      display: flex;
+      gap: 15px;
+    }
+
+    .checkout-item img {
+      width: 80px;
+      border-radius: 10px;
+    }
+
+    .summary {
+      border: 1px solid #eee;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .checkout-form input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .btn-pay {
+      width: 100%;
+      padding: 15px;
+      background: black;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="../pages/index.html" class="nav-logo"><span>Pink</span> Label</a>
+</nav>
+
+<div class="checkout-container">
+
+  <!-- LEFT -->
+  <div>
+    <div class="checkout-title">Your Order</div>
+    <div id="checkoutItems" class="checkout-items"></div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="summary">
+    <div class="checkout-title">Summary</div>
+
+    <div class="summary-row">
+      <span>Subtotal</span>
+      <span id="subtotal">J$0.00</span>
+    </div>
+
+    <div class="summary-row">
+      <span>Shipping</span>
+      <span>Calculated later</span>
+    </div>
+
+    <hr>
+
+    <div class="summary-row">
+      <strong>Total</strong>
+      <strong id="total">J$0.00</strong>
+    </div>
+
+    <!-- ✅ FORM ADDED -->
+    <form id="checkoutForm" class="checkout-form">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="address" placeholder="Address" required>
+
+      <button class="btn-pay">Complete Purchase</button>
+    </form>
+
+  </div>
+
+</div>
+
+<!-- ✅ LINK TO JS -->
+<script src="../js_code/checkout.js"></script>
+
+</body>
+</html>

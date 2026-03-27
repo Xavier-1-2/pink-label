@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Pink Label</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/shop.css">
+</head>
+<body>
+
+  <!-- CART OVERLAY & DRAWER -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title">Your Bag</div>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🛍</div>
+        <p>Your bag is empty.<br>Add something beautiful.</p>
+      </div>
+      <div class="cart-items" id="cartItems" style="display:none"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-amount" id="cartSubtotal">J$0.00</span>
+      </div>
+      <p class="cart-note">Shipping &amp; taxes calculated at checkout</p>
+      <button class="btn-checkout" onclick="goToCheckout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo"><span>Pink</span> Label</a>
+    <ul class="nav-links">
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="nav-cart" id="navCart">🛍 <span class="badge" id="badge">0</span></button>
+  </nav>
+
+  <!-- SHOP HERO BANNER -->
+  <section class="shop-banner">
+    <div class="shop-banner-inner">
+      <p class="shop-banner-eyebrow">The Collection</p>
+      <h1 class="shop-banner-title">All Pieces</h1>
+    </div>
+    <div class="shop-banner-deco">
+      <div class="deco-blob deco-blob--1"></div>
+      <div class="deco-blob deco-blob--2"></div>
+    </div>
+  </section>
+
+  <!-- FILTER + SORT BAR -->
+  <div class="shop-toolbar">
+    <div class="shop-toolbar-inner">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="two-piece">Two-Piece Tops</button>
+        <button class="filter-btn" data-filter="new">New In</button>
+        <button class="filter-btn" data-filter="sale">Sale</button>
+      </div>
+      <div class="sort-group">
+        <label class="sort-label" for="sortSelect">Sort</label>
+        <select class="sort-select" id="sortSelect">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="newest">Newest</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS COUNT -->
+  <div class="shop-count-bar">
+    <div class="shop-count-inner">
+      <span class="shop-count" id="shopCount">6 items</span>
+    </div>
+  </div>
+
+  <!-- PRODUCT GRID -->
+  <section class="shop-products">
+    <div class="shop-grid" id="shopGrid">
+
+      <div class="product-card fade" data-category="two-piece" data-price="35" data-order="1">
+        <div class="product-img">
+          <img src="../assets/Product_1.png" alt="Blush Bandeau Set">
+          <div class="product-badge">New In</div>
+          <button class="quick-add"
+            data-id="1"
+            data-name="Blush Bandeau Set"
+            data-price="35.00"
+            data-img="Product_1.png">Add to Bag</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Product_1</div>
+          <div class="price-row"><span class="price">J$350.00</span></div>
+          <div class="color-swatches">
+            <div class="swatch" style="background:white;border-color:#ddd" title="White"></div>
+            <div class="swatch" style="background:#f7c5d0" title="Blush"></div>
+            <div class="swatch" style="background:#2a1a1f" title="Noir"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fade" data-category="two-piece" data-price="40" data-order="2">
+        <div class="product-img">
+          <img src="../assets/Product_2.png" alt="Rose Wrap Top Set">
+          <div class="product-badge product-badge--sale">Sale</div>
+          <button class="quick-add"
+            data-id="2"
+            data-name="Rose Wrap Top Set"
+            data-price="40.00"
+            data-img="Product_2.png">Add to Bag</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Product_2</div>
+          <div class="price-row">
+            <span class="price">J$400.00</span>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch" style="background:white;border-color:#ddd" title="White"></div>
+            <div class="swatch" style="background:#e8799a" title="Rose"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fade" data-category="new" data-price="45" data-order="3">
+        <div class="product-img">
+          <img src="../assets/Product_1.png" alt="Petal Crop Duo">
+          <div class="product-badge">New In</div>
+          <button class="quick-add"
+            data-id="3"
+            data-name="Petal Crop Duo"
+            data-price="45.00"
+            data-img="Product_1.png">Add to Bag</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Product_3</div>
+          <div class="price-row"><span class="price">J$450.00</span></div>
+          <div class="color-swatches">
+            <div class="swatch" style="background:#fce8ee" title="Petal"></div>
+            <div class="swatch" style="background:#c45070" title="Deep Rose"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fade" data-category="two-piece" data-price="38" data-order="4">
+        <div class="product-img">
+          <img src="../assets/Product_2.png" alt="Ivory Knit Set">
+          <button class="quick-add"
+            data-id="4"
+            data-name="Ivory Knit Set"
+            data-price="38.00"
+            data-img="Product_2.png">Add to Bag</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Product_4</div>
+          <div class="price-row"><span class="price">J$308.00</span></div>
+          <div class="color-swatches">
+            <div class="swatch" style="background:#fffaf4;border-color:#ddd" title="Ivory"></div>
+            <div class="swatch" style="background:#7a5c65" title="Mauve"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fade" data-category="sale" data-price="28" data-order="5">
+        <div class="product-img">
+          <img src="../assets/Product_1.png" alt="Noir Tie Top Set">
+          <div class="product-badge product-badge--sale">Sale</div>
+          <button class="quick-add"
+            data-id="5"
+            data-name="Noir Tie Top Set"
+            data-price="28.00"
+            data-img="Product_1.png">Add to Bag</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Product_5</div>
+          <div class="price-row">
+            <span class="price">J$28.00</span>
+          </div>
+          <div class="color-swatches">
+            <div class="swatch" style="background:#2a1a1f" title="Noir"></div>
+            <div class="swatch" style="background:#f7c5d0" title="Blush"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card fade" data-category="new two-piece" data-price="52" data-order="6">
+        <div class="product-img">
+          <img src="../assets/Product_2.png" alt="Cherry Blossom Set">
+          <div class="product-badge">New In</div>
+          <button class="quick-add"
+            data-id="6"
+            data-name="Cherry Blossom Set"
+            data-price="52.00"
+            data-img="Product_2.png">Add to Bag</button>
+        </div>
+        <div class="product-info">
+          <div class="product-name">Product_6</div>
+          <div class="price-row"><span class="price">J$52.00</span></div>
+          <div class="color-swatches">
+            <div class="swatch" style="background:#e8799a" title="Rose"></div>
+            <div class="swatch" style="background:white;border-color:#ddd" title="White"></div>
+            <div class="swatch" style="background:#fce8ee" title="Petal"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="shop-empty" id="shopEmpty" style="display:none">
+      <div class="shop-empty-icon">🌸</div>
+      <p>No items found in this category.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <a href="../pages/index.html" class="footer-logo"><span>Pink</span> Label</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-links">
+          <li><a href="#">Two-Piece Tops</a></li>
+          <li><a href="#">New In</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Help</div>
+        <ul class="footer-links">
+          <li><a href="#">Sizing Guide</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Pink Label. All rights reserved.</div>
+  </footer>
+
+  <script type="module" src="../js_code/cart.js"></script>
+  <script type="module" src="../js_code/product.js"></script>
+  <script type="module" src="../js_code/shop.js"></script>
+
+</body>
+</html>
