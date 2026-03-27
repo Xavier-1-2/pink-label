@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink Label</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+  <!-- CART OVERLAY & DRAWER -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <div class="cart-title">Your Bag</div>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="cart-empty-icon">🛍</div>
+        <p>Your bag is empty.<br>Add something beautiful.</p>
+      </div>
+      <div class="cart-items" id="cartItems" style="display:none"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span class="cart-subtotal-label">Subtotal</span>
+        <span class="cart-subtotal-amount" id="cartSubtotal">J$0.00</span>
+      </div>
+      <p class="cart-note">Shipping &amp; taxes calculated at checkout</p>
+      <button class="btn-checkout">Checkout</button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo"><span>Pink</span> Label</a>
+    <ul class="nav-links">
+      <li><a href="pages/shop.html">Shop</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <button class="nav-cart" id="navCart">🛍 <span class="badge" id="badge">0</span></button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1 class="hero-title">Style that<br>speaks for<br><em>itself.</em></h1>
+      <a href="pages/shop.html" class="btn-primary">Shop Now</a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-label">New In</div>
+      </div>
+      <div class="hero-card2"></div>
+    </div>
+  </section>
+
+  <!-- ANNOUNCEMENT -->
+  <div class="announce">Two-piece tops</div>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="shop">
+    <div class="products-inner">
+      <div class="products-header fade">
+        <h2>Two-Piece <em>Tops</em></h2>
+      </div>
+      <div class="product-grid">
+
+        <div class="product-card fade">
+          <div class="product-img">
+            <img src="assets/Product_1.png" alt="Product 1">
+            <button class="quick-add"
+              data-id="1"
+              data-name="Product_1"
+              data-price="35.00"
+              data-img="Product_1.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-name">Product_1</div>
+            <div class="price-row"><span class="price">J$35.00</span></div>
+            <div class="color-swatches">
+              <div class="swatch" style="background:white;border-color:#ddd"></div>
+              <div class="swatch" style="background:#f7c5d0"></div>
+              <div class="swatch" style="background:#2a1a1f"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card fade">
+          <div class="product-img">
+            <img src="assets/Product_2.png" alt="Product 2">
+            <button class="quick-add"
+              data-id="2"
+              data-name="Product_2"
+              data-price="40.00"
+              data-img="Product_2.png">Add to Bag</button>
+          </div>
+          <div class="product-info">
+            <div class="product-name">Product_2</div>
+            <div class="price-row"><span class="price">J$40.00</span></div>
+            <div class="color-swatches">
+              <div class="swatch" style="background:white;border-color:#ddd"></div>
+              <div class="swatch" style="background:#e8799a"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <a href="#" class="footer-logo"><span>Pink</span> Label</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Shop</div>
+        <ul class="footer-links">
+          <li><a href="#">Two-Piece Tops</a></li>
+          <li><a href="#">New In</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Help</div>
+        <ul class="footer-links">
+          <li><a href="#">Sizing Guide</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Pink Label. All rights reserved.</div>
+  </footer>
+
+  <!-- JS: cart must load before product so exports are available -->
+  <script type="module" src="../js_code/cart.js"></script>
+  <script type="module" src="../js_code/product.js"></script>
+
+</body>
+</html>
